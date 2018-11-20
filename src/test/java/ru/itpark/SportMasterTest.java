@@ -8,21 +8,28 @@ class SportMasterTest {
 
     @Test
     void calculateCashBack() {
+
         {
-            SportMaster SMaster = new SportMaster();
-            int cashBack = SMaster.calculateCashBack(4_000, 4_000);
+            SportMaster sMaster = new SportMaster();
+            int cashBack = sMaster.calculateCashBack(0, 4_000);
             assertEquals(200, cashBack);
         }
 
         {
-            SportMaster SMaster = new SportMaster();
-            int cashBack = SMaster.calculateCashBack(15_001, 10_000);
+            SportMaster sMaster = new SportMaster();
+            int cashBack = sMaster.calculateCashBack(4_000, 4_000);
+            assertEquals(200, cashBack);
+        }
+
+        {
+            SportMaster sMaster = new SportMaster();
+            int cashBack = sMaster.calculateCashBack(15_001, 10_000);
             assertEquals(700, cashBack);
         }
 
         {
-            SportMaster SMaster = new SportMaster();
-            int cashBack = SMaster.calculateCashBack(150_001, 4_000);
+            SportMaster sMaster = new SportMaster();
+            int cashBack = sMaster.calculateCashBack(150_001, 4_000);
             assertEquals(400, cashBack);
         }
     }
